@@ -2,9 +2,9 @@ import cors from 'cors';
 import express, { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import { PaymentController } from './app/modules/payment/payment.controller';
 import router from './routes';
 import { Morgan } from './shared/morgen';
-import { PaymentController } from './app/modules/payment/payment.controller';
 const app = express();
 
 //morgan
@@ -19,6 +19,8 @@ app.use(
       'http://192.168.10.19:3000',
       'http://192.168.10.18:3030',
       'http://192.168.10.19:3030',
+      'http://139.59.0.25:4173',
+      'http://139.59.0.25:3000/',
     ],
     credentials: true,
   })
